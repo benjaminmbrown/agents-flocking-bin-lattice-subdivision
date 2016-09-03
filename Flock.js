@@ -1,6 +1,7 @@
 var Flock = function(vehicles) {
    
-	this.vehicleFlock = [];
+	this.vehicleFlock = [];	
+
 	this.resolution = 10;
 	this.cols= width/this.resolution;
 	this.rows = height/this.resolution;
@@ -17,14 +18,17 @@ var Flock = function(vehicles) {
 
     console.log(this.grid);
 
+
+
+
 	this.run = function(){
+
 		for(var i = 0; i<this.vehicleFlock.length; i++){
-			this.vehicleFlock[i].run(this.vehicleFlock);
-			if(this.vehicleFlock[i].life>0){
-				//this.vehicleFlock[i].reduceLife(1);
-			}else{
-				//this.vehicleFlock.splice(0,i);
-			}
+			var column = this.vehicleFlock[i].position.y / this.resolution;
+			var row = this.vehicleFlock[i].position.x / this.resolution;
+
+			//this.vehicleFlock[i].run(this.vehicleFlock);
+			this.vehicleFlock[i].run(this.grid[column][row]);
 		}
 	}
 

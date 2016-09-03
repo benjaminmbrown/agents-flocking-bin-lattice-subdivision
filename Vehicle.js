@@ -33,7 +33,10 @@ var Vehicle = function(x, y, Type) {
         this.c = color(255, 0, 0, 20);
     }
 
+
+
     this.run = function(vehicles) {
+        console.log("Vehicles", vehicles);
         this.flock(vehicles);
         this.update();
         this.borders();
@@ -394,7 +397,7 @@ var Vehicle = function(x, y, Type) {
         // //cohesion
         fill(this.c);
         noStroke();
-        ellipse(this.position.x, this.position.y, this.cohesionDistance/2, this.cohesionDistance/2);
+        ellipse(this.position.x, this.position.y, this.cohesionDistance / 2, this.cohesionDistance / 2);
 
 
 
